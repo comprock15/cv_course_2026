@@ -1,0 +1,91 @@
+/home/khoruzhaia-vi/Projects/cv_course_2026/seminars/seminar_Minkowski/MinkowskiEngine/MinkowskiEngine/__init__.py:221: UserWarning: The MinkowskiEngine was compiled with CPU_ONLY flag. If you want to compile with CUDA support, make sure `torch.cuda.is_available()` is True when you install MinkowskiEngine.
+  warnings.warn(
+===================ModelNet40 Dataset===================
+Training with translation 0.2
+Evaluating with translation 0.0
+=============================================
+
+
+===================Network===================
+MinkowskiFCNN(
+  (mlp1): Sequential(
+    (0): MinkowskiLinear(in_features=3, out_features=32, bias=False)
+    (1): MinkowskiBatchNorm(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): MinkowskiLeakyReLU()
+  )
+  (conv1): Sequential(
+    (0): MinkowskiConvolution(in=32, out=48, kernel_size=[3, 3, 3], stride=[1, 1, 1], dilation=[1, 1, 1])
+    (1): MinkowskiBatchNorm(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): MinkowskiLeakyReLU()
+  )
+  (conv2): Sequential(
+    (0): MinkowskiConvolution(in=48, out=64, kernel_size=[3, 3, 3], stride=[2, 2, 2], dilation=[1, 1, 1])
+    (1): MinkowskiBatchNorm(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): MinkowskiLeakyReLU()
+  )
+  (conv3): Sequential(
+    (0): MinkowskiConvolution(in=64, out=96, kernel_size=[3, 3, 3], stride=[2, 2, 2], dilation=[1, 1, 1])
+    (1): MinkowskiBatchNorm(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): MinkowskiLeakyReLU()
+  )
+  (conv4): Sequential(
+    (0): MinkowskiConvolution(in=96, out=128, kernel_size=[3, 3, 3], stride=[2, 2, 2], dilation=[1, 1, 1])
+    (1): MinkowskiBatchNorm(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): MinkowskiLeakyReLU()
+  )
+  (conv5): Sequential(
+    (0): Sequential(
+      (0): MinkowskiConvolution(in=336, out=256, kernel_size=[3, 3, 3], stride=[2, 2, 2], dilation=[1, 1, 1])
+      (1): MinkowskiBatchNorm(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): MinkowskiLeakyReLU()
+    )
+    (1): Sequential(
+      (0): MinkowskiConvolution(in=256, out=512, kernel_size=[3, 3, 3], stride=[2, 2, 2], dilation=[1, 1, 1])
+      (1): MinkowskiBatchNorm(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): MinkowskiLeakyReLU()
+    )
+    (2): Sequential(
+      (0): MinkowskiConvolution(in=512, out=1024, kernel_size=[3, 3, 3], stride=[2, 2, 2], dilation=[1, 1, 1])
+      (1): MinkowskiBatchNorm(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): MinkowskiLeakyReLU()
+    )
+  )
+  (pool): MinkowskiMaxPooling(kernel_size=[3, 3, 3], stride=[2, 2, 2], dilation=[1, 1, 1])
+  (global_max_pool): MinkowskiGlobalMaxPooling(mode=PoolingMode.GLOBAL_MAX_POOLING_PYTORCH_INDEX)
+  (global_avg_pool): MinkowskiGlobalAvgPooling(mode=PoolingMode.GLOBAL_AVG_POOLING_PYTORCH_INDEX)
+  (final): Sequential(
+    (0): Sequential(
+      (0): MinkowskiLinear(in_features=2048, out_features=512, bias=False)
+      (1): MinkowskiBatchNorm(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): MinkowskiLeakyReLU()
+    )
+    (1): MinkowskiDropout()
+    (2): Sequential(
+      (0): MinkowskiLinear(in_features=512, out_features=512, bias=False)
+      (1): MinkowskiBatchNorm(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): MinkowskiLeakyReLU()
+    )
+    (3): MinkowskiLinear(in_features=512, out_features=40, bias=True)
+  )
+)
+=============================================
+
+
+SGD (
+Parameter Group 0
+    dampening: 0
+    differentiable: False
+    foreach: None
+    fused: None
+    initial_lr: 0.1
+    lr: 0.1
+    maximize: False
+    momentum: 0.9
+    nesterov: False
+    weight_decay: 0.0001
+)
+<torch.optim.lr_scheduler.CosineAnnealingLR object at 0x7cabcf9e87a0>
+Downloading the 2k downsampled ModelNet40 dataset...
+--2026-05-27 23:43:49--  https://shapenet.cs.stanford.edu/media/modelnet40_ply_hdf5_2048.zip
+Resolving shapenet.cs.stanford.edu (shapenet.cs.stanford.edu)... 171.67.77.19
+Connecting to shapenet.cs.stanford.edu (shapenet.cs.stanford.edu)|171.67.77.19|:443... 

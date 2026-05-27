@@ -15,3 +15,4 @@
 9. [Семинар 9 - Детекция объектов](./seminars/seminar_detection.ipynb) **Домашнее задание**
 10. [Семинар 10 - Трекинг объектов](./seminars/seminar_11/Seminar_11.ipynb) **Домашнее задание**
 11. [Семинар 11 - Сегментация объектов](./seminars/seminar_segmentation/seminar_segmentation_SAM.ipynb) **Домашнее задание**
+12. [Семинар 12 - Minkowski](./seminars/seminar_Minkowski/Seminar_12.ipynb) **Домашнее задание**
